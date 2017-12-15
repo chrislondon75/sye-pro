@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Question page
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <a class="link-back" href="/url/of/previous/page">Back</a>
+
+      <h1 class="heading-large">Which types of fruit can you juggle?
+      </h1>
+
+      <form class="form" action="/juggling-trick" method="post">
+
+        <div class="form-group">
+          <fieldset>
+
+            <legend>
+              <span class="body-text">You can choose more than one</span>
+            </legend>
+
+            <div class="multiple-choice">
+              <input id="apples" name="juggling-fruit" type="checkbox" value="Apples" {{checked("juggling-fruit","Apples")}}>
+              <label for="apples">Apples</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="pears" name="juggling-fruit" type="checkbox" value="Pears" {{checked("juggling-fruit","Pears")}}>
+              <label for="pears">Pears</label>
+            </div>
+            <div class="multiple-choice">
+              <input id="bananas" name="juggling-fruit" type="checkbox" value="Bananas" {{checked("juggling-fruit","Bananas")}}>
+              <label for="bananas">Bananas</label>
+            </div>
+            <div class="multiple-choice" data-target="example-different-fruit">
+              <input id="other-fruit" name="juggling-fruit" type="checkbox" value="Other things"  {{checked("juggling-fruit","Other fruit")}}>
+              <label for="other-fruit">Other things</label>
+            </div>
+            <div class="panel panel-border-narrow js-hidden" id="example-different-fruit">
+              <label class="form-label" for="fruit-other-fruit">Type of fruit</label>
+              <input class="form-control" type="text" id="fruit-other-fruit" name="fruit-other-country">
+            </div>
+
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <input class="button" type="submit" value="Continue">
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
